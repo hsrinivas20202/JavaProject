@@ -6,7 +6,7 @@ interface Square {
 }
 
 @FunctionalInterface
-interface Add {
+interface add {
 	void calculate(int x, int y);
 }
 
@@ -17,7 +17,7 @@ public class FunctioInterfaceLambda {
 		// Return type of abstract method should match
 		Square x = (s) -> System.out.println(s * s);
 		x.calculate(5);
-		Add addImplementation = (a, b) -> System.out.println(a + b);
+		add addImplementation = (a, b) -> System.out.println(a + b);
 		addImplementation.calculate(1, 2);
 		
 	}
