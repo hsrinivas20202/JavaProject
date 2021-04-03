@@ -8,7 +8,6 @@ public class Student implements Comparable<Student> {
 	
 	
 	public Student(int rollNo, String studentName, double marks) {
-		super();
 		this.rollNo = rollNo;
 		this.studentName = studentName;
 		this.marks = marks;
@@ -46,4 +45,20 @@ public class Student implements Comparable<Student> {
 		return -1;
 	}
 	
+	public boolean equals(Object o) {
+		if(o == null || !(o instanceof Student)) {
+			return false;
+		}
+
+		if(o == this) {
+			return true;
+		}
+
+		Student s = (Student)o;
+		return s.getRollNo() == this.getRollNo();
+	}
+	
+	public int hashCode() {
+		return getRollNo();
+	}
 }
